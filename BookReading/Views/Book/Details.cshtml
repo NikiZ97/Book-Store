@@ -1,0 +1,77 @@
+﻿
+@using BookReading.Models
+@model Book
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<fieldset>
+	<h2>Книга</h2>
+    
+    <h3>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</h3>
+    
+	<b>
+		@Html.DisplayNameFor(model => model.Description):
+	</b>
+	<span>
+		@Html.DisplayFor(model => model.Description)
+	</span>
+    <br/>
+	<b>
+		@Html.DisplayNameFor(model => model.Author):
+	</b>
+	<span>
+		@Html.DisplayFor(model => model.Author)
+	</span>
+    <br />
+	<b>
+		@Html.DisplayNameFor(model => model.Pages):
+	</b>
+	<span>
+		@Html.DisplayFor(model => model.Pages)
+	</span>
+    <br />
+	<b>
+		@Html.DisplayNameFor(model => model.Genre):
+	</b>
+    <span>
+        @Html.DisplayFor(model => model.Genre)
+    </span>
+	<br />
+	<b>
+		@Html.DisplayNameFor(model => model.Mark):
+	</b>
+	<span class="mark">
+		@Html.DisplayFor(model => model.Mark, new { @class = "mark" })
+	</span>
+	<br />
+	<span><b> Проголосовать: </b></span>
+	<span class="like-btn-1" data-book="@Model.Id">
+		&#10084;   
+	</span>
+	<span class="like-btn-2" data-book="@Model.Id">
+		&#10084;   
+	</span>
+	<span class="like-btn-3" data-book="@Model.Id">
+		&#10084;   
+	</span>
+	<span class="like-btn-4" data-book="@Model.Id">
+		&#10084;   
+	</span>
+	<span class="like-btn-5" data-book="@Model.Id">
+		&#10084;   
+	</span>
+</fieldset>
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "List") |
+	@Html.ActionLink("Добавить отзыв", "Create", "Review", new { bookId = Model.Id }, null)
+</p>	   
+<br/>
+<br/>
+@Html.ActionLink("Топ-5 комментариев", "Top5", "Review", new { bookId = Model.Id }, null)
+       
+
+@Html.Partial("ReviewPartial", Model.Reviews)
