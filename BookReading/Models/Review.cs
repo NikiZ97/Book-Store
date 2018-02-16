@@ -12,15 +12,15 @@ namespace BookReading.Models
 	    [PrimaryKey, Identity]
         public int Id { get; set; }
 		
-		[Display(Name = "Автор")]
+		[Display(Name = "Author")]
 		[Column]
         public string Author { get; set; }
 
 	    [Column]
         public int BookId { get; set; }
 		
-		[Required (ErrorMessage = "Поле Отзыв обязательно для заполнения")]
-		[Display(Name = "Отзыв")]
+		[Required (ErrorMessage = "Required field")]
+		[Display(Name = "Feedback")]
 		[Column]
         public string Text { get; set; }
 

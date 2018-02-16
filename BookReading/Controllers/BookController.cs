@@ -54,7 +54,7 @@ namespace BookReading.Controllers
 		
 		public ActionResult Details(int id = 0)
 		{
-			ViewBag.Title = "Подробнее о книге";
+			ViewBag.Title = "More about the book";
 			var book = _bookContext.GetBook(id);
 			
 			if (book == null)

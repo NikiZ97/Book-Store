@@ -37,14 +37,3 @@
 </style>
 
 <hr/>
-@*
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        @foreach (int index in Enumerable.Range(Model.currentPage, 5))
-        {
-            <li class="page-item">
-                @Html.ActionLink(index.ToString(), "List", new {currentPage = index}, new { @class = "page-link" })
-            </li>
-        } 
-    </ul>
-</nav>  *@ 

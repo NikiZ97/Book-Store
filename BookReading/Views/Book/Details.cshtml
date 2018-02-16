@@ -8,7 +8,7 @@
 
 
 <fieldset>
-	<h2>Книга</h2>
+	<h2>Book</h2>
     
     <h3>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</h3>
     
@@ -47,7 +47,7 @@
 		@Html.DisplayFor(model => model.Mark, new { @class = "mark" })
 	</span>
 	<br />
-	<span><b> Проголосовать: </b></span>
+	<span><b> Vote: </b></span>
 	<span class="like-btn-1" data-book="@Model.Id">
 		&#10084;   
 	</span>
@@ -67,11 +67,11 @@
 <p>
 	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
 	@Html.ActionLink("Back to List", "List") |
-	@Html.ActionLink("Добавить отзыв", "Create", "Review", new { bookId = Model.Id }, null)
+	@Html.ActionLink("Give feedback", "Create", "Review", new { bookId = Model.Id }, null)
 </p>	   
 <br/>
 <br/>
-@Html.ActionLink("Топ-5 комментариев", "Top5", "Review", new { bookId = Model.Id }, null)
+@Html.ActionLink("Top-5 comments", "Top5", "Review", new { bookId = Model.Id }, null)
        
 
 @Html.Partial("ReviewPartial", Model.Reviews)
